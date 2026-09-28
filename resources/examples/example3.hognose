@@ -1,0 +1,9 @@
+# Add two integers.
+
+int x = 10
+int y = 25
+int sum = x + y
+
+print("The sum is: ")
+print(sum)
+

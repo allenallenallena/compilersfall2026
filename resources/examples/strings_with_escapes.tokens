@@ -1,0 +1,1 @@
+[["str", "KEYWORD"], [" ", "WHITESPACE"], ["msg", "IDENT"], [" ", "WHITESPACE"], ["=", "OPERATOR"], [" ", "WHITESPACE"], ["\"Addie said, \\\"This is a string.\\\"\"", "LITERAL-STR"], ["\n\n", "WHITESPACE"], ["print", "IDENT"], ["(", "PAREN-OPEN"], ["msg", "IDENT"], [")", "PAREN-CLOSE"], ["\n", "EOF"]]

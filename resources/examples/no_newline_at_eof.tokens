@@ -1,0 +1,1 @@
+[["int", "KEYWORD"], [" ", "WHITESPACE"], ["x", "IDENT"], [" ", "WHITESPACE"], ["=", "OPERATOR"], [" ", "WHITESPACE"], ["3", "LITERAL-INT"], ["\n", "WHITESPACE"], ["print", "IDENT"], ["(", "PAREN-OPEN"], [" ", "WHITESPACE"], ["str", "KEYWORD"], ["(", "PAREN-OPEN"], ["x", "IDENT"], [")", "PAREN-CLOSE"], [" ", "WHITESPACE"], [")", "PAREN-CLOSE"], ["", "EOF"]]

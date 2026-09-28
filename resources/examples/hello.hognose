@@ -1,0 +1,10 @@
+# Hello, World in Hognose
+
+print("Hello, World!")
+
+int x = 4
+float y = 3
+
+float z = y / x
+
+print( "The answer is: " + str(z))

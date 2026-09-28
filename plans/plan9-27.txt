@@ -1,0 +1,45 @@
+stream of conciousness thoughts:
+-first thing i gotta do is get the file in so ill do that naiively now and fix it later.
+    * I'm gonna write a helper that parses arguments and makes them safe or whatever to clean up main.
+    * I'm gonna try to do wildcard even though perhaps I'm not ready to try that
+    * scratch that, I get wildcard for free! YAY!
+    * what should parse_args return? maybe i dont even need it...
+    * 6:25 -- now i have the args, i just have to parse them.
+    * next step is taking each arg in order and opening up that file and reading chars in it
+    * I'm looking at implementing a buffer, think I'm gonna do a 2K buffer or maybe a double buffer or whatever. I'm still fuzzy on the details but I think im just gonna hack away at it til' something makes sense
+    * Think about now would be the time i'd make a function "get_next_token" or something that just does the thing. still thinking about implementation
+    * ooh, maybe a "fill buffer" function too. I'm worried about what happens if i have a very large identifier that splits the two buffers, when i overwrite the first buffer what does that mean for rollbacks? if there's a problem, what do I do? I'm just gonna do it and see what happens.
+
+
+
+
+
+
+
+
+
+This part of the compiler needs to do 3 main things as far as i'm aware, with some smaller stuff here and there
+
+considerations:
+    * whitespace
+    * for now, main will probably do a lot where in the future it may be a skeleton that calls all of the functions that actually do the processing. I'll break out the functionality logically or when practicality requires it.
+    * I'd like to implement wildcard and multi-compilation, reading and compiling multiple files, we'll see how it goes in this programming session
+
+PLAN:
+    1: read the input file, utilizing 1 character (byte) at a time
+        * 
+
+    2: decide what the contents of that file are, token by token
+
+    3: emit JSON with a chronological list of those tokens in this format (i think)
+        - e.g. '[["LEXEME", "CLASS"], ["LEXEME", "CLASS"], ["LEXEME", "CLASS"], etc...]'
+
+misc stuff:
+    * needs to take the name of the source code as the first arg
+    * needs to output "on the standard output stream (stdout)", whatever that means??
+    * I need to find a good JSON parser for this, though I'm not sure if I need to do that NOW
+    * after further research, "on the standard output stream (stdout)" means print to console. got input
+
+notes:
+    * I'm not sure wether it would be wise to add complexity up front and make token "objects." I'm not sure wether it's naiive or expected to add objects at this point.
+    *I'm not sure wether I need a JSON parser at this point or not

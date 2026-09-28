@@ -1,0 +1,3 @@
+str msg = "Addie said, \"This is a string.\""
+
+print(msg)

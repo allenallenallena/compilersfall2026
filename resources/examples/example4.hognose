@@ -1,0 +1,12 @@
+# A program to calculate the factorial of a number using a while loop.
+int n = 7
+# ---------------------------
+int result = 1
+int i = 1
+while (i <= n) {
+result = result * i
+i = i + 1
+}
+# ---------------------------
+print("Factorial of " + str(n) + " is " + str(result))
+

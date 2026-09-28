@@ -1,0 +1,9 @@
+# This is a simple program to demonstrate variable declaration and printing.
+
+str message = "Hello, World!"
+print(message)
+
+int year = 2025
+# The str() function allows + to concatenate the int as a str
+print("The year is: " + str(year))
+

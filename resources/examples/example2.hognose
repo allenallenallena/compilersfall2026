@@ -1,0 +1,11 @@
+int first = 10
+int second = 20
+int third = 30
+
+# This is parsed as a single statement: result = first + second + third
+int result = first + second + \
+                third
+
+print("The very long calculation result is: " + \
+        str(result))
+

@@ -1,0 +1,6 @@
+# Here is a continuation.
+int x = 3 + 4 \
+    * 7
+
+# Here is -not- a continuation \
+str a = "not \ a \"continuation\""

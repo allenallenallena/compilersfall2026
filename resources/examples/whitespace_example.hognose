@@ -1,0 +1,12 @@
+# This program demonstrates the flexibility of whitespace in Hognose.
+
+int x = 1 # you can space around operators
+int y=2   # but you don't have to
+
+int z=y*x
+
+print(str(z))
+
+z =   z      *       3   # There can also be excess whitespace (even if it's ugly).
+
+print(  str(  z  )  )

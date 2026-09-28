@@ -1,0 +1,9 @@
+# test the if/else statement
+
+if ( 3 < 2 ) {
+    print("less")
+}
+else {
+    print("gte")
+}
+

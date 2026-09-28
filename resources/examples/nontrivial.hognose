@@ -1,0 +1,43 @@
+# This is a slightly more non-trivial program in Hognose.
+
+int a = 3
+int b = 4
+float x = 3
+
+int res1 = a / b   # This is integer division
+float res2 = x / b # This is float division
+
+if ( res1 != 0 ) {
+    print(
+        "Error.  Integer division of 3/4 == 0.  Saw: "\
+        + str(res1)
+    )
+}
+
+if ( res2 != 0.75 ) {
+    print(
+        "Error.  Float division of 3/4 == 0.75.  Saw: "\
+        + str(res1)
+    )
+}
+
+# Now we will compute a square root, and check our 
+# calculation:
+float sqrt_ans = 12.4101
+float sqrt_query = 154.01058201
+
+# Use Heron's method to calculate the square root
+x = sqrt_query / 2
+float x_old = 0
+
+while((x-x_old) * (x-x_old) > 0.00000000001){
+    x_old = x
+    x = 0.5 * (x_old + sqrt_query / x_old)
+}
+
+print("Estimate: " + str(x))
+print("Actual:   " + str(sqrt_ans))
+
+if( (x-sqrt_ans) * (x-sqrt_ans) > 0.0000000001){
+    print("Error in estimate is too great.")
+}
