@@ -4,11 +4,16 @@ stream of conciousness thoughts:
     * I'm gonna try to do wildcard even though perhaps I'm not ready to try that
     * scratch that, I get wildcard for free! YAY!
     * what should parse_args return? maybe i dont even need it...
-    * 6:25 -- now i have the args, i just have to parse them.
+    * 6:25 PM -- now i have the args, i just have to parse them.
     * next step is taking each arg in order and opening up that file and reading chars in it
     * I'm looking at implementing a buffer, think I'm gonna do a 2K buffer or maybe a double buffer or whatever. I'm still fuzzy on the details but I think im just gonna hack away at it til' something makes sense
     * Think about now would be the time i'd make a function "get_next_token" or something that just does the thing. still thinking about implementation
     * ooh, maybe a "fill buffer" function too. I'm worried about what happens if i have a very large identifier that splits the two buffers, when i overwrite the first buffer what does that mean for rollbacks? if there's a problem, what do I do? I'm just gonna do it and see what happens.
+    * 11:32 PM -- It is now at this point that I believe my "fill_buffer" function is working correctly or at least semi-correctly. I think next steps are to start working on the state machine. Im thinking of doing that one with all those go-tos. as long as the language doesn't change or become any MORE complex I think I can handle it, and I'm starting sufficiently early that I think I might have time to do it.
+    * I'm wondering if separating tokens by whitespace would be acceptable. now that I'm thinking about it, almost certainly not. I'm gonna have to pass the stream to it aren't I? Im thinking of using a list of objects for the actual lexemes but maybe there's something that's tailor-made for this 2-tuple style structure... Im worried about cases like int{int{int{int{int}}}} just declaring new scope after scope with no whitespace. is that allowed in hognose? each line is a statement so can a line be like this? does declaring a new scope count as a statement?
+    * I'm gonna base this direct-coded implementation on the slides and as such they will be heavily "inspired." looks like there's a stack in case there's an error so you can identify the eronious lexeme and display it for debugging or whateves.
+    * I was thinking about the solution to a problem and I had a little a-ha moment. I was thinking "how can I garuntee that the buffer doesn't run out while the states are running. It's that call to "NextChar()", it can garuntee that the buffer is alright! I guess that was kind of assumed but I think it was pretty cool.
+    * I read the footnotes on the slides and it seems like I should really NOT be writing labels and states manually... noted...
 
 
 

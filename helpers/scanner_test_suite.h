@@ -1,0 +1,6 @@
+#ifndef SCANNER_TEST_SUITE
+#define SCANNER_TEST_SUITE
+
+
+
+#endif
