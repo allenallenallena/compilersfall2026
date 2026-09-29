@@ -1,0 +1,7 @@
+stream of conciousness thoughts:
+    * I've decided to switch to a direct coded implementation just for now. right now im thinking about how to represent states in the state machine.
+    * I'm having a lot of trouble deciding how I'm *supposed* to be implementing this. again i think i just have to do it or ill never get anything done. I'm also having trouble deciding how to determine the boundary between tokens
+    * I'm finding the documentation for this "hognose" language to be unsatasfactory today. According to everything I've seen provided by the assignment, comma's are not used in syntax AT ALL (and are nowhere to be found in the example programs either).
+    * Colons are also not used...
+    * nor semicolons (which I suppose I knew)
+    * Okay so what gives with true and false. according to the docs they're both keyword AND literal-bool. None of the examples actually use them so again i just have to decide

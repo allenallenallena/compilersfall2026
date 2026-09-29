@@ -68,6 +68,8 @@ s5: //comment "#.*\n" '#'
 s6: //any '.' (not literal period '\.', any)
 s7: //newline '\n' 
 
+//
+
 se: //error state
 
 }

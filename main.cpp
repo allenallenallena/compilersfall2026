@@ -4,10 +4,12 @@
 #include <string>
 #include <stdexcept>
 #include <vector>
+#include <cstdint>
 
-#include "state_machine.h"
+//#include "./helpers/state_machine.h"
 #include "token.h"
-#include "utils.h"
+#include "./helpers/utils.h"
+#include "./helpers/direct_coded_implementation.h"
 
 using std::cout;
 using std::endl;
@@ -26,8 +28,6 @@ int main(int argc, char* argv[]) {
         vector<Token> tokens; 
         get_tokens(fin, tokens);
         output_IR(tokens);
-
-        
     }   
 
     return 0;
