@@ -2,21 +2,34 @@
 #define UTILS
 
 using std::cout;
+using std::endl;
 
 void output_IR(std::vector<Token> tokens) {
     cout << '[';
-
-    for (const Token& each_token : tokens) {
-        if (each_token.null_lexeme) {
+    int number_of_tokens = tokens.size();
+    for (int i = 0; i < number_of_tokens - 1; i++) { //all but the last tokens
+        if (tokens.at(i).null_lexeme) {
         cout << "[null, "
-             << '\"' << each_token.TOKEN_CLASS << "\"], ";
+             << '\"' << tokens.at(i).TOKEN_CLASS << "\"], ";
         } else {
-        cout << "[\"" << each_token.lexeme << "\", "
-             << '\"' << each_token.TOKEN_CLASS << "\"], ";
+        cout << "[\"" << tokens.at(i).lexeme << "\", "
+             << '\"' << tokens.at(i).TOKEN_CLASS << "\"], ";
         }
     }
 
+    cout << "[\"" << tokens.at(number_of_tokens - 1).lexeme << "\", "
+         << '\"' << tokens.at(number_of_tokens - 1).TOKEN_CLASS << "\"]";
+
     cout << ']';
+}
+
+void debug_output_IR(std::vector<Token> tokens) {
+    int number_of_tokens = tokens.size();
+    for (int i = 0; i < number_of_tokens; i++) {
+        cout << "token " << i << ": <" << tokens.at(i).lexeme << '>' << endl;
+    }
+
+
 }
 
 #endif

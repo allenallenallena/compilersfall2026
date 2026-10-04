@@ -28,6 +28,8 @@ int main(int argc, char* argv[]) {
         vector<Token> tokens; 
         get_tokens(fin, tokens);
         output_IR(tokens);
+        cout << endl;
+        debug_output_IR(tokens);
     }   
 
     return 0;
