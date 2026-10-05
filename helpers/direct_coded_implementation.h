@@ -207,14 +207,15 @@ void set_up_delta_array(int delta[][UNIQUE_CHARACTERS]) {
                     break;
                 }
                 case BEGIN_STRING_STATE: { //done
-                    if (j != QUOTATION_MARK && j != NEWLINE) {delta[i][j] = BEGIN_STRING_STATE;}
+                    if (j == BACKSLASH) {delta[i][j] = ESCAPE_QUOTATION_STATE;}
+                    else if (j != QUOTATION_MARK && j != NEWLINE) {delta[i][j] = BEGIN_STRING_STATE;}
                     else if (j == QUOTATION_MARK) {delta[i][j] = END_STRING_STATE;}
-                    else if (j == BACKSLASH) {delta[i][j] = ESCAPE_QUOTATION_STATE;}
                     else {delta[i][j] = ERROR_STATE;} // error state
                     break;
                 }
                 case ESCAPE_QUOTATION_STATE: { //done
-                    if (j == QUOTATION_MARK) {delta[i][j] = BEGIN_STRING_STATE;}
+                    if (j == BACKSLASH) {delta[i][j] = ESCAPE_QUOTATION_STATE;}
+                    else if (j != NEWLINE) {delta[i][j] = BEGIN_STRING_STATE;}
                     else {delta[i][j] = ERROR_STATE;} // error state
                     break;
                 }
@@ -314,7 +315,7 @@ void get_tokens(ifstream& stream, vector<Token>& tokens) { //referenced vector i
                 current_state = delta[current_state][column];
                 if (current_char == '\n') {current_token.lexeme = current_token.lexeme + "\\n";} 
                 else if (current_char == '\r') {current_token.lexeme = current_token.lexeme + "\\r";} 
-                else if (current_char == '\\') {current_token.lexeme = current_token.lexeme + '\\';} 
+                else if (current_char == '\\') {current_token.lexeme = current_token.lexeme + "\\\\";} 
                 else if (current_char == '"') {current_token.lexeme = current_token.lexeme + "\\\"";} 
                 else{current_token.lexeme = current_token.lexeme + current_char;}
             } else {
@@ -324,7 +325,7 @@ void get_tokens(ifstream& stream, vector<Token>& tokens) { //referenced vector i
         }
         if (accepting_states[previous_state]) {
             if (!current_token.lexeme.empty() && current_char != EOF) {
-                if (current_char == '\n' || current_char == '\r' || current_char == '\\' || current_char == '"') {current_token.lexeme.pop_back(); current_token.lexeme.pop_back();} 
+                if (current_char == '\n' || current_char == '\r' || current_char == '"' || current_char == '\\') {current_token.lexeme.pop_back(); current_token.lexeme.pop_back();} 
                 else{current_token.lexeme.pop_back();}
             }
             if (previous_state == IDENT_STATE) {

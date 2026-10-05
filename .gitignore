@@ -2,3 +2,5 @@
 .DS_Store
 a.out
 a.exe
+tests.exe
+tests.out
