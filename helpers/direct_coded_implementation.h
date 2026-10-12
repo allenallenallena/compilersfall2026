@@ -58,8 +58,8 @@ void set_up_char_class_array(int char_class[]) { //this is a monstrocity.
 //This one just goes down the line running ONE operation per unique character. This one should be about O(2n) (i.e. O(n)) where n is characters in the language
 void set_up_char_class_array(Char_classes char_class[]) { 
     for (int i = 0; i < 128; i++) {char_class[i] = ANY;} 
-    char_class['\t'] = char_class[' '] = SPACE;
-    char_class['\n'] = char_class['\r'] = NEWLINE;
+    char_class['\t'] = char_class['\r'] = char_class[' '] = SPACE;
+    char_class['\n'] = NEWLINE;
     char_class['+'] = char_class['/'] = char_class['-'] = char_class['*'] = char_class['%'] = OPERATOR;
     char_class['<'] = char_class['>'] = char_class['!'] = RELATIONAL;
     char_class['='] = EQUALS;
