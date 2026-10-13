@@ -329,7 +329,7 @@ void get_tokens(ifstream& stream, vector<Token>& tokens) { //referenced vector i
                 else{current_token.lexeme.pop_back();}
             }
             if (previous_state == IDENT_STATE) {
-                if (!is_keyword(current_token.lexeme)) {current_token.TOKEN_CLASS = "IDENT";} 
+                if (!is_keyword(current_token.lexeme)) {current_token.TOKEN_CLASS = "IDENTIFIER";} 
                 else if (current_token.lexeme == "true" || current_token.lexeme == "false") {current_token.TOKEN_CLASS = "LITERAL-BOOL";}
                 else {current_token.TOKEN_CLASS = "KEYWORD";}
             } 
